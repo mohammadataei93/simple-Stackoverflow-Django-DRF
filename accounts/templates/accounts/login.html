@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="post" novalidate class="col-md-5">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Login">
+</form>
+
+<br><br>
+<a href="{% url 'social:begin' 'github' %}" class="btn btn-info col-md-1">Github</a>
+<a href="{% url 'social:begin' 'google-oauth2' %}" class="btn btn-danger col-md-1">Google</a>
+{% endblock %}
